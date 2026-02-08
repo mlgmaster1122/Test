@@ -1,13 +1,17 @@
 package com.decorativesticks;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.shape.VoxelShape;
@@ -27,7 +31,7 @@ public class ModBlocks {
     
     private static final String[] MATERIALS = {"concrete", "terracotta"};
     
-    // Stick orientations with their shapes (in pixels: 1/16th of a block)
+    
     public enum StickType {
         VERTICAL_CENTER("vertical_centered", createBox(6, 0, 6, 4, 16, 4)),
         VERTICAL_LEFT("vertical_left", createBox(0, 0, 6, 4, 16, 4)),
@@ -66,7 +70,7 @@ public class ModBlocks {
     }
     
     public static void registerBlocks() {
-        // Register all stick blocks for each color, material, and orientation
+    
         for (String material : MATERIALS) {
             for (String color : COLORS) {
                 for (StickType type : StickType.values()) {
@@ -81,15 +85,24 @@ public class ModBlocks {
     private static void registerStickBlock(String material, String color, StickType type) {
         String blockName = String.format("stick_%s_%s_%s", type.getName(), material, color);
         
+        Identifier id = Identifier.of(DecorativeSticksMod.MOD_ID, blockName);
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
+    
         AbstractBlock.Settings settings = AbstractBlock.Settings.copy(Blocks.STONE)
             .strength(2.0f, 6.0f)
             .sounds(BlockSoundGroup.STONE)
-            .requiresTool();
-        
+            .requiresTool()
+            .registryKey(blockKey);  
+
         DirectionalStickBlock block = new DirectionalStickBlock(settings, type.getShape());
         Registry.register(Registries.BLOCK, id, block);
         
-        BlockItem blockItem = new BlockItem(block, new Item.Settings());
+        Item.Settings itemSettings = new Item.Settings()
+            .registryKey(itemKey)
+            .useBlockPrefixedTranslationKey();
+
+        BlockItem blockItem = new BlockItem(block, itemSettings); 
         Registry.register(Registries.ITEM, id, blockItem);
         
         ALL_BLOCKS.add(block);
@@ -101,7 +114,10 @@ public class ModBlocks {
         }
     }
     
-    public static List<Block> getBlocks() {
-        return new ArrayList<>(ALL_BLOCKS);
+    public static void setRenderLayers() {
+       
+        for (Block block : ALL_BLOCKS) {
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
+        }
     }
 }
