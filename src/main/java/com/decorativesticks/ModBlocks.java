@@ -87,8 +87,6 @@ public class ModBlocks {
             .requiresTool();
         
         DirectionalStickBlock block = new DirectionalStickBlock(settings, type.getShape());
-        
-        Identifier id = Identifier.of(DecorativeSticksMod.MOD_ID, blockName);
         Registry.register(Registries.BLOCK, id, block);
         
         BlockItem blockItem = new BlockItem(block, new Item.Settings());
