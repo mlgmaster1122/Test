@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "decorativesticks:block/terracotta_magenta",
+    "particle": "decorativesticks:block/terracotta_magenta"
+  }
+}

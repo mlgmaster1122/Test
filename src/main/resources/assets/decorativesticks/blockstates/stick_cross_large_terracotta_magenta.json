@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "decorativesticks:block/stick_cross_large_terracotta_magenta"
+    },
+    "facing=south": {
+      "model": "decorativesticks:block/stick_cross_large_terracotta_magenta",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "decorativesticks:block/stick_cross_large_terracotta_magenta",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "decorativesticks:block/stick_cross_large_terracotta_magenta",
+      "y": 90
+    }
+  }
+}

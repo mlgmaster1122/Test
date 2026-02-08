@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "decorativesticks:block/stick_horizontal_bottom_concrete_purple"
+    },
+    "facing=south": {
+      "model": "decorativesticks:block/stick_horizontal_bottom_concrete_purple",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "decorativesticks:block/stick_horizontal_bottom_concrete_purple",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "decorativesticks:block/stick_horizontal_bottom_concrete_purple",
+      "y": 90
+    }
+  }
+}

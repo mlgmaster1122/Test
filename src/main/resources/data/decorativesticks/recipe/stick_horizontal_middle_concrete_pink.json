@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:pink_concrete"
+    }
+  },
+  "result": {
+    "item": "decorativesticks:stick_horizontal_middle_concrete_pink",
+    "count": 8
+  }
+}

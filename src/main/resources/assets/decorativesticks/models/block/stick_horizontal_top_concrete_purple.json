@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "decorativesticks:block/concrete_purple",
+    "particle": "decorativesticks:block/concrete_purple"
+  }
+}

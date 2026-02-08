@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:black_terracotta"
+    }
+  },
+  "result": {
+    "item": "decorativesticks:stick_cross_large_terracotta_black",
+    "count": 8
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cyan_concrete"
+    }
+  },
+  "result": {
+    "item": "decorativesticks:stick_horizontal_bottom_concrete_cyan",
+    "count": 8
+  }
+}

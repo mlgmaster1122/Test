@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "decorativesticks:block/stick_vertical_middle_terracotta_light_blue"
+    },
+    "facing=south": {
+      "model": "decorativesticks:block/stick_vertical_middle_terracotta_light_blue",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "decorativesticks:block/stick_vertical_middle_terracotta_light_blue",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "decorativesticks:block/stick_vertical_middle_terracotta_light_blue",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:gray_terracotta"
+    }
+  },
+  "result": {
+    "item": "decorativesticks:stick_vertical_left_terracotta_gray",
+    "count": 8
+  }
+}
